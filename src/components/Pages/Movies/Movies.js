@@ -4,8 +4,7 @@ import SingleContent from "../../SingleContent/SingleContent";
 import CustomPagination from "../../Pagination/CustomPagination";
 // import Chip from "@mui/material/Chip";
 import Genres from "../../Genres/Genres";
-
-
+import useGenre from "../../../hooks/useGenre";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
@@ -13,10 +12,11 @@ const Movies = () => {
   const [numOfPages, setnumOfPages] = useState();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+  const genreforURL = useGenre(selectedGenres);
 
   const fetchMovies = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=ee4cf7db2e767d46b174f2b3e1fab0e0&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`
+      `https://api.themoviedb.org/3/discover/movie?api_key=ee4cf7db2e767d46b174f2b3e1fab0e0&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate&with_genres=${genreforURL}`
     );
     setContent(data.results);
     setnumOfPages(data.total_pages);
@@ -24,7 +24,7 @@ const Movies = () => {
 
   useEffect(() => {
     fetchMovies();
-  }, [page]);
+  }, [page, genreforURL]);
 
   return (
     <div>
