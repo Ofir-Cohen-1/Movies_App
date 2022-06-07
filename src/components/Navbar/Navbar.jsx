@@ -25,11 +25,12 @@ export default function SimpleBottomNavigation() {
   return (
     <Box
       sx={{
-        backgroundColor: "black",
+        // backgroundColor: 'primary.dark',
         width: "100%",
         position: "fixed",
         bottom: 0,
         zIndex: 100,
+        // opacity: [0.9, 0.8, 0.7],
       }}
     >
       <BottomNavigation

@@ -1,0 +1,12 @@
+.container {
+  padding: 30px 0;
+}
+.chip {
+    border: 1px solid transparent;
+}
+
+.chip:hover {
+  border: 1px solid whitesmoke;
+  cursor: pointer;
+}
+
