@@ -3,10 +3,8 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-  img_300,
-  noPicture,
-} from "../../../config/Config";
+import { img_300, noPicture } from "../../../config/Config";
+import './Carousel.css'
 
 const handleDragStart = (e) => e.preventDefault();
 
@@ -49,7 +47,17 @@ const Carousel = ({ media_type, id }) => {
     // eslint-disable-next-line
   }, []);
 
-  return <AliceCarousel mouseTracking items={items} />;
+  return (
+    <AliceCarousel
+      autoPlay
+      responsive={responsive}
+      infinite
+      disableDotsControls
+      disableButtonsControls
+      mouseTracking
+      items={items}
+    />
+  );
 };
 
 export default Carousel;

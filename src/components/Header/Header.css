@@ -13,7 +13,6 @@
   font-size: 20px;
   text-transform: uppercase;
   color: #db0000;
-  z-index: 101;
 }
 
 @media (max-width: 1000px) {
