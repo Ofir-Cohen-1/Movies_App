@@ -8,6 +8,8 @@ import WhatshotOutlinedIcon from "@mui/icons-material/WhatshotOutlined";
 import MovieCreationOutlinedIcon from "@mui/icons-material/MovieCreationOutlined";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+// import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 
 import "../Navbar/Navbar.css";
 
@@ -22,7 +24,18 @@ export default function SimpleBottomNavigation() {
     else if (value === 3) history.push("/search");
   }, [value, history]);
 
+  // const darkTheme = createTheme({
+  //   palette: {
+  //     mode: "dark",
+  //     primary: {
+  //       main: "#0000",
+  //     },
+  //   },
+  // });
+
+
   return (
+    // <ThemeProvider className="theme" theme={darkTheme}>
     <Box
       sx={{
         // backgroundColor: 'primary.dark',
@@ -62,5 +75,6 @@ export default function SimpleBottomNavigation() {
         />
       </BottomNavigation>
     </Box>
+    // </ThemeProvider>
   );
 }

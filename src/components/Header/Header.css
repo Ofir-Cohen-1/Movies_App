@@ -1,22 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+
 .Main_Header {
   width: 100%;
   position: fixed;
   display: flex;
   padding-bottom: 15px;
   background-color: black;
+  top:0;
   /* justify-content: center; */
   z-index: 100;
 }
 .Netflux_Header {
   cursor: pointer;
   display: inline-block;
-  font-size: 20px;
+  font-size: 24px;
   text-transform: uppercase;
   color: #db0000;
+  position: relative;
+  top: 8px;
 }
 
-@media (max-width: 1000px) {
-  .Header {
-    padding-top: 15px;
-  }
-}
