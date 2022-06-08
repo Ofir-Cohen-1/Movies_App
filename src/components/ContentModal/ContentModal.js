@@ -1,23 +1,20 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
 import axios from "axios";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import Carousel from "./Carousel/Carousel";
+import Badge from "@mui/material/Badge";
+import "../ContentModal/ContentModal.css";
 import {
   img_500,
   unavailable,
   unavailableLandscape,
 } from "../../config/Config";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import Carousel from "./Carousel/Carousel";
-import Badge from "@mui/material/Badge";
-
-import "../ContentModal/ContentModal.css";
 
 const style = {
   position: "absolute",
@@ -82,30 +79,8 @@ export default function ContentModal({
           timeout: 500,
         }}
       >
-        {/* <Fade in={open}>
-          {content && (
-            <div className="ContantModal">
-              <img
-                src={
-                  content.poster_path
-                    ? `${img_500}/${content.poster_path}`
-                    : unavailable
-                }
-                alt={content.name || content.title}
-                className="ContentModal__portrait"
-              />
-            </div>
-          )}
-        </Fade>
-      </Modal>
-    </div>
-  );
-} */}
-
         <Fade in={open}>
           <Box sx={style}>
-            {/* <Typography id="transition-modal-description" > */}
-
             {content && (
               <div className="ContentModal">
                 <img
@@ -137,11 +112,11 @@ export default function ContentModal({
                         content.release_date ||
                         "-----"
                       ).substring(0, 4)}
-                  <Badge
-                    className="badge"
-                    badgeContent={vote_average}
-                    color={vote_average > 6 ? "primary" : "secondary"}
-                  />
+                      <Badge
+                        className="badge"
+                        badgeContent={vote_average}
+                        color={vote_average > 6 ? "primary" : "secondary"}
+                      />
                     </i>
                   )}
 
@@ -165,7 +140,6 @@ export default function ContentModal({
                 </div>
               </div>
             )}
-            {/* </Typography> */}
           </Box>
         </Fade>
       </Modal>
