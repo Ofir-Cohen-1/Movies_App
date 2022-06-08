@@ -56,6 +56,7 @@ const Carousel = ({ media_type, id }) => {
       disableButtonsControls
       mouseTracking
       items={items}
+      style={{height: '100px'}}
     />
   );
 };
