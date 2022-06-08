@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+}
+
+button {
+  background-color: whitesmoke;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-radius: 4px;
+  cursor: pointer;
+}
