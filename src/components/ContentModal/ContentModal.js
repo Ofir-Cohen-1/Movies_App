@@ -14,7 +14,7 @@ import {
   unavailableLandscape,
 } from "../../config/Config";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-// import Carousel from "../Carousel/Carousel";
+import Carousel from "./Carousel/Carousel";
 import Badge from "@mui/material/Badge";
 
 import "../ContentModal/ContentModal.css";
@@ -149,9 +149,9 @@ export default function ContentModal({
                     {content.overview}
                   </span>
 
-                  {/* <div>
+                  <div>
                     <Carousel id={id} media_type={media_type} />
-                  </div> */}
+                  </div>
 
                   <Button
                     variant="contained"
